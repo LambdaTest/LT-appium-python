@@ -9,7 +9,7 @@ desired_caps = {
     "deviceName":"Galaxy S20",
     "platformName":"Android",
     "platformVersion":"10",
-    "app":"lt://APP100202491650292091969582",
+    "app":"lt://", #Enter app_url here
     "isRealMobile":True,
     "build":"Python Vanilla Android",
     "name":"Sample Test - Python",
@@ -20,11 +20,11 @@ desired_caps = {
 
 def startingTest():
     if os.environ.get("LT_USERNAME") is None:
-        username = "username"
+        username = "username"  #Enter LT username here if environment variables have not been added
     else:
         username = os.environ.get("LT_USERNAME")
     if os.environ.get("LT_ACCESS_KEY") is None:
-        accesskey = "accesskey"
+        accesskey = "accesskey" #Enter LT accesskey here if environment variables have not been added
     else:
         accesskey = os.environ.get("LT_ACCESS_KEY")
     
