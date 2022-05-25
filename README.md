@@ -1,6 +1,6 @@
-# Python 
+# Python ![pw](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-<img height="300" src="https://user-images.githubusercontent.com/95698164/170249263-f469ab8c-1f1e-42bb-916a-75240bf80da1.png">
+<img height="300" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 
 *Python is a programming language that can be used for many purposes. It has a clear, readable syntax and uses significant indentation to indicate code blocks. Python is dynamically-typed and uses a garbage collector.*
 
