@@ -92,7 +92,7 @@ set LT_ACCESS_KEY="${ YOUR_LAMBDATEST_ACCESS_KEY()}`}"
 
 ## Run Your First Test
 
-Once you are done with the above-mentioned steps, you can initiate your first JUnit test on LambdaTest.
+Once you are done with the above-mentioned steps, you can initiate your first Python test on LambdaTest.
 
 Test Scenario: Check out [Android.py](https://github.com/LambdaTest/LT-appium-python/blob/master/android.py) file to view the sample test script for android and [iOS.py](https://github.com/LambdaTest/LT-appium-python/blob/master/ios.py) for iOS.
 
