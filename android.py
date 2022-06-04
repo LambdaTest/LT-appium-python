@@ -29,7 +29,7 @@ def startingTest():
         accesskey = os.environ.get("LT_ACCESS_KEY")
     
     try:
-        driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://"+username+":"+accesskey+"@beta-hub.lambdatest.com/wd/hub")
+        driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://"+username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
         colorElement = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/color")))
         colorElement.click()
 
