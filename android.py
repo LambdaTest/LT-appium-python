@@ -15,7 +15,12 @@ desired_caps = {
     "name":"Sample Test - Python",
     "network":True,
     "visual":True,
-    "video":True
+    "video":True,
+
+    # ADD THE APP URL OF OTHER APPS THAT YOU'D LIKE TO INSTALL ON THE SAME DEVICE
+
+    "otherApps":["lt:// ", "lt:// "]   #ENTER THE OTHER APP URLs HERE IN AN ARRAY FORMAT
+
 }
 
 def startingTest():
@@ -46,25 +51,6 @@ def startingTest():
         geolocation.click()
         time.sleep(5)
 
-        driver.back()
-
-        home = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/buttonPage")))
-        home.click()
-
-        speedTest = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/speedTest")))
-        speedTest.click()
-        time.sleep(5)
-        
-        driver.back()
-
-        browser = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/webview")))
-        browser.click()
-
-        url = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/url")))
-        url.send_keys("https://www.lambdatest.com")
-
-        find = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/find")))
-        find.click()
         driver.quit()
     except:
         driver.quit()
