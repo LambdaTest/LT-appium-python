@@ -16,7 +16,13 @@ desired_caps = {
     "network":True,
     "visual":True,
     "video":True,
-    "geoLocation":"fr"
+    "geoLocation":"fr",
+    
+    #ACCEPT ALERTS FOR IOS
+    "autoDismissAlerts": True,
+
+    #DISMISS ALERTS FOR IOS
+    "autoAcceptAlerts": True
 }
 
 def startingTest():
