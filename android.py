@@ -16,7 +16,10 @@ desired_caps = {
     "network":True,
     "visual":True,
     "video":True,
-    "geoLocation":"fr"
+    "geoLocation":"fr",
+    
+    #GRANT PERMISSIONS FOR ANDROID
+    "autoGrantPermissions": True
 }
 
 def startingTest():
