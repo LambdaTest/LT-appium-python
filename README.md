@@ -1,12 +1,12 @@
-# How to change IP geographic location in Python with Appium on on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-geoLocation)
+# How to handle permission pop-ups in Python with Appium on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-permissions)
 
-While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where you would like to simulate location of a specific country. You can easily do that by using the lambdatest capability "GeoLocation" and refer the 2-letter country code in the automation script. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-python)
+While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where you would like to automatically handle permission pop-ups. You may choose to either accept all permission pop-ups or dismiss all of them. You can handle the case as mentioned below separately for Android or iOS apps. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-python).
 
 # Steps:
 
 The following is an example on how to set geoLocation in the capabilities.
 
-```
+```python
 from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support.ui import WebDriverWait
@@ -26,8 +26,14 @@ desired_caps = {
     "visual":True,
     "video":True,
 
-    #ADD GEOLOCATION BASED ON COUNTRY CODE
-    "geoLocation":"fr"
+    #GRANT PERMISSIONS FOR ANDROID
+    "autoGrantPermissions": True,
+
+    #ACCEPT ALERTS FOR IOS
+    "autoDismissAlerts": True,
+
+    #DISMISS ALERTS FOR IOS
+    "autoAcceptAlerts": True
 
 }
 
@@ -64,18 +70,15 @@ def startingTest():
         driver.quit()
 
 startingTest()
-
 ```
-
 ## Run your test
 
 ```bash
 python3 android.py
 ```
-
 Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build).
 
-## Additional Links
+# Additional Links
 
 - [Advanced Configuration for Capabilities](https://www.lambdatest.com/support/docs/desired-capabilities-in-appium/)
 - [How to test locally hosted apps](https://www.lambdatest.com/support/docs/testing-locally-hosted-pages/)
@@ -122,4 +125,4 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 ## We are here to help you :headphones:
 
 * Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
-* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-geolocation)
+* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-permissions)
