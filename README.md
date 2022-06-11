@@ -82,8 +82,6 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 Once you are done with the above-mentioned steps, you can initiate your first Python test on LambdaTest.
 
-**Test Scenario:** Check out [Android.py](https://github.com/LambdaTest/LT-appium-python/blob/master/android.py) file to view the sample test script for android and [iOS.py](https://github.com/LambdaTest/LT-appium-python/blob/master/ios.py) for iOS.
-
 ### Configuring Your Test Capabilities
 
 You can update your custom capabilities in test scripts. In this sample project, we are passing platform name, platform version, device name and app url (generated earlier) along with other capabilities like build name and test name via capabilities object. The capabilities object in the sample code are defined as:
