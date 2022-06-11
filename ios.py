@@ -10,7 +10,11 @@ desired_caps = {
     "platformName":"ios",
     "platformVersion":"14",
     "isRealMobile":True,
-    "app":"lt://", #Enter app_url here
+
+    #Enter the Custom_ID here that was used to upload your application
+
+    "app":"ENTER_CUSTOM_ID_HERE", 
+    
     "build":"Python Vanilla iOS",
     "name":"Sample Test - Python",
     "network":True,
@@ -39,23 +43,7 @@ def startingTest():
         toastElement.click()
         notification = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"notification")))
         notification.click()
-        time.sleep(3)
-        geolocation = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"geoLocation")))
-        geolocation.click()
-        time.sleep(5)
-        driver.back()
-        home = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"Home")))
-        home.click()
-        speedTest = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"speedTest")))
-        speedTest.click()
-        time.sleep(5)
-        driver.back()
-        browser = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"Browser")))
-        browser.click()
-        url = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"url")))
-        url.send_keys("https://www.lambdatest.com")
-        find = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBsy.ACCESSIBILITY_ID,"find")))
-        find.click()
+
         driver.quit()
     except:
         driver.quit()
