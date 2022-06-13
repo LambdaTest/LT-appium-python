@@ -57,8 +57,16 @@ def startingTest():
         url.send_keys("https://www.lambdatest.com")
         find = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBsy.ACCESSIBILITY_ID,"find")))
         find.click()
+        
+        #MARKING TEST AS PASSED
+        driver.executeScript("lambda-status=passed")
+        
         driver.quit()
     except:
+        
+        #MARKING TEST AS FAILED
+        driver.executeScript("lambda-status=failed")
+        
         driver.quit()
 
 startingTest()
