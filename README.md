@@ -1,10 +1,10 @@
-# How to change IP geographic location in Python with Appium on on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-geoLocation)
+# How to mark test as Passed or Failed in Python with Appium on [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-passfail)
 
-While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where you would like to simulate location of a specific country. You can easily do that by using the lambdatest capability "GeoLocation" and refer the 2-letter country code in the automation script. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-python)
+While performing app automation testing with appium on LambdaTest Grid, you may face a scenario where a test that you declared as fail in your local instance may turn out to be completed successfully at LambdaTest. Don't worry though! We understand how imperative it is to flag an app automation test as either "pass" or "fail" depending upon your testing requirement with respect to the validation of expected behaviour. You can refer to sample test repo [here](https://github.com/LambdaTest/LT-appium-python).
 
 # Steps:
 
-The following is an example on how to set geoLocation in the capabilities.
+You can specify a test as passed or failed by Lambda hooks. The following is an example on how to set test result as passed or failed. If the code reaches exception, then it will be marked as failed, else as passed.
 
 ```
 from appium import webdriver
@@ -25,9 +25,6 @@ desired_caps = {
     "network":True,
     "visual":True,
     "video":True,
-
-    #ADD GEOLOCATION BASED ON COUNTRY CODE
-    "geoLocation":"fr"
 
 }
 
@@ -58,9 +55,15 @@ def startingTest():
         geolocation = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/geoLocation")))
         geolocation.click()
         time.sleep(5)
-
+        
+        #MARKING TEST AS PASSED
+        driver.executeScript("lambda-status=passed")
         driver.quit()
+        
     except:
+    
+        #MARKING TEST AS FAILED
+        driver.executeScript("lambda-status=failed")
         driver.quit()
 
 startingTest()
@@ -122,4 +125,4 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 ## We are here to help you :headphones:
 
 * Got a query? we are available 24x7 to help. [Contact Us](support@lambdatest.com)
-* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-geolocation)
+* For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=appium-python-passfail)
