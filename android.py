@@ -66,8 +66,14 @@ def startingTest():
 
         find = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/find")))
         find.click()
+        
+        #MARKING TEST AS PASSED
+        driver.executeScript("lambda-status=passed")
         driver.quit()
     except:
+        
+        #MARKING TEST AS FAILED
+        driver.executeScript("lambda-status=failed")
         driver.quit()
 
 startingTest()
