@@ -9,11 +9,7 @@ desired_caps = {
     "deviceName":"Galaxy S20",
     "platformName":"Android",
     "platformVersion":"10",
-
-    #Enter the Custom_ID here that was used to upload your application
-
-    "app":"ENTER_CUSTOM_ID_HERE", 
-    
+    "app":"lt://", 
     "isRealMobile":True,
     "build":"Python Vanilla Android",
     "name":"Sample Test - Python",
@@ -42,6 +38,12 @@ def startingTest():
 
         toastElement = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/toast")))
         toastElement.click()
+
+        #Close the application
+        driver.close_app()
+
+        #Open the application
+        driver.open_app()
 
         notification = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ID,"com.lambdatest.proverbial:id/notification")))
         notification.click()

@@ -10,11 +10,7 @@ desired_caps = {
     "platformName":"ios",
     "platformVersion":"14",
     "isRealMobile":True,
-
-    #Enter the Custom_ID here that was used to upload your application
-
-    "app":"ENTER_CUSTOM_ID_HERE", 
-    
+    "app":"lt://", 
     "build":"Python Vanilla iOS",
     "name":"Sample Test - Python",
     "network":True,
@@ -39,6 +35,13 @@ def startingTest():
         colorElement.click()
         textElement = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"Text")))
         textElement.click()
+
+        #Close the application
+        driver.close_app()
+
+        #Open the application
+        driver.open_app()
+
         toastElement = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"toast")))
         toastElement.click()
         notification = WebDriverWait(driver,20).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"notification")))
