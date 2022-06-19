@@ -49,6 +49,12 @@ git clone https://github.com/LambdaTest/LT-appium-python
 cd LT-appium-python
 ```
 
+Install the required dependencies by using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Setting Up Your Authentication
 
 Make sure you have your LambdaTest credentials with you to run test automation scripts on LambdaTest. To obtain your access credentials, [purchase a plan](https://billing.lambdatest.com/billing/plans?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python) or access the [Automation Dashboard](https://appautomation.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python).
