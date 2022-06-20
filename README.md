@@ -57,14 +57,14 @@ Set LambdaTest `Username` and `Access Key` in environment variables.
 
 **For Linux/macOS:**
 
-```js
+```bash
 export LT_USERNAME="YOUR_LAMBDATEST_USERNAME" \
 export LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
 
 **For Windows:**
 
-```js
+```powershell
 set LT_USERNAME="YOUR_LAMBDATEST_USERNAME" `
 set LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 ```
@@ -77,7 +77,7 @@ set LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
 
 **Linux/macOS:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
@@ -86,7 +86,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **Windows:**
 
-```js
+```powershell
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -F "appFile=@"/Users/macuser/Downloads/proverbial_android.apk""
 ```
 
@@ -94,7 +94,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://m
 
 **Linux/macOS:**
 
-```js
+```bash
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 --location --request POST 'https://manual-api.lambdatest.com/app/upload/realDevice' \
 --form 'name="Android_App"' \
@@ -103,7 +103,7 @@ curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" \
 
 **For Windows:**
 
-```js
+```powershell
 curl -u "YOUR_LAMBDATEST_USERNAME:YOUR_LAMBDATEST_ACCESS_KEY" -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" -d "{"url":"https://prod-mobile-artefacts.lambdatest.com/assets/docs/proverbial_android.apk","name":"sample.apk"}"
 ```
 
@@ -122,9 +122,7 @@ Once you are done with the above-mentioned steps, you can initiate your first Py
 
 You can update your custom capabilities in test scripts. In this sample project, we are passing platform name, platform version, device name and app url (generated earlier) along with other capabilities like build name and test name via capabilities object. The capabilities object in the sample code are defined as:
 
-<Tabs className="docs__val">
-
-<TabItem value="ios-config" label="iOS" default>
+**iOS:**
 
 ```python title="iOS(.ipa)"
  desired_caps = {
@@ -140,9 +138,7 @@ You can update your custom capabilities in test scripts. In this sample project,
     "video":True
 }
 ```
-
-</TabItem>
-<TabItem value="android-config" label="Android" default>
+**Android:**
 
 ```python title="Android(.apk)"
 desired_caps = {
@@ -158,10 +154,6 @@ desired_caps = {
     "video":True
 }
 ```
-
-</TabItem>
-
-</Tabs>
 
 **Info Note:**
 
@@ -189,11 +181,11 @@ python3 ios.py
 > If you fail to run the tests, try creating virtual env and installing the dependencies in that environment to run the tests.
 > Creating and activating a virtual environment
 
-    ```
-    pip3 install virtualenv
-    virtualenv venv
-    source venv/bin/activate
-    ```
+```
+pip3 install virtualenv
+virtualenv venv
+source venv/bin/activate
+```
 
 ## Additional Links
 
@@ -242,7 +234,3 @@ To stay updated with the latest features and product add-ons, visit [Changelog](
 
 - Got a query? we are available 24x7 to help. [Contact Us](mailto:support@lambdatest.com)
 - For more info, visit - [LambdaTest](https://www.lambdatest.com/?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python)
-
-```
-
-```
