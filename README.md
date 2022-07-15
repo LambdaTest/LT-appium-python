@@ -58,15 +58,15 @@ Set LambdaTest `Username` and `Access Key` in environment variables.
 **For Linux/macOS:**
 
 ```bash
-export LT_USERNAME="YOUR_LAMBDATEST_USERNAME" \
-export LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
+export LT_USERNAME=YOUR_LAMBDATEST_USERNAME \
+export LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 ```
 
 **For Windows:**
 
 ```powershell
-set LT_USERNAME="YOUR_LAMBDATEST_USERNAME" `
-set LT_ACCESS_KEY="YOUR_LAMBDATEST_ACCESS_KEY"
+set LT_USERNAME=YOUR_LAMBDATEST_USERNAME `
+set LT_ACCESS_KEY=YOUR_LAMBDATEST_ACCESS_KEY
 ```
 
 ### Upload Your Application
@@ -175,6 +175,8 @@ python3 android.py
 ```bash
 python3 ios.py
 ```
+**Info Note:**
+If you are unable to run the automation script with the above mentioned commands try **'python'** command except for **'python3'**.
 
 > Your test results would be displayed on the test console (or command-line interface if you are using terminal/cmd) and on the [LambdaTest App Automation Dashboard](https://appautomation.lambdatest.com/build?utm_source=github&utm_medium=repo&utm_campaign=LT-appium-python).
 
