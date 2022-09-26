@@ -10,7 +10,7 @@ desired_caps = {
     "platformName": "ios",
     "platformVersion": "14",
     "isRealMobile": True,
-    "app": "APP_URL",  # Enter app_url here
+    "app": "lt://proverbial-ios",  # Enter app_url here
     "build": "Python Vanilla iOS",
     "name": "Sample Test - Python",
     "network": True,
