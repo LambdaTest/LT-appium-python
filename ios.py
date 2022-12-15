@@ -13,7 +13,7 @@ desired_caps = {
     "app": "lt://proverbial-ios",  # Enter app_url here
     "build": "Python Vanilla iOS",
     "name": "Sample Test - Python",
-    "network": True,
+    "network": False,
     "visual": True,
     "video": True
 }
