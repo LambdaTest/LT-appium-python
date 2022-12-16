@@ -13,7 +13,7 @@ desired_caps = {
     "isRealMobile": True,
     "build": "Python Vanilla Android",
     "name": "Sample Test - Python",
-    "network": True,
+    "network": False,
     "visual": True,
     "video": True
 }
