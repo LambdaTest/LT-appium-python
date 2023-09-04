@@ -5,13 +5,15 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
+
+build = os.getenv('LT_BUILD_NAME')
 desired_caps = {
     "deviceName": "Galaxy S20",
     "platformName": "Android",
     "platformVersion": "10",
     "app": "lt://APP10160571901693825032424492",  # Enter app_url here
     "isRealMobile": True,
-    "build": "Python Vanilla Android",
+    "build": build,
     "name": "Sample Test - Python",
     "network": False,
     "visual": True,
