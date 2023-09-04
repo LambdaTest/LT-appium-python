@@ -6,15 +6,15 @@ pipeline {
       steps {
         checkout([$class: 'GitSCM',
                   branches: [[name: '*/main']],
-                  userRemoteConfigs: [[url: 'https://github.com/prashantsharma2608/second.git']]])
+                  userRemoteConfigs: [[url: 'https://github.com/prashantsharma2608/LT-appium-python.git']]])
       }
     }
 
     stage('Test') {
       steps {
-        bat 'python -m pip install selenium'
-        bat 'python -m pip install pytest'
-        bat 'python test1.py'
+        bat 'pip install -r requirements.txt'
+        // bat 'python -m pip install pytest'
+        bat 'python android.py'
       }
     }
     stage('Report'){
