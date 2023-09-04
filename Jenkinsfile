@@ -16,27 +16,27 @@ pipeline {
         bat 'unzip lambdatest-tunnel.zip'
        }
     }
-stage('Start LambdaTest Tunnel') {
-    steps {
-        bat './lambdatest-tunnel --user prashantsharma --key RlEUtZdSXJkl3iEtXNx6eWFSyLBfDJlkYRYG1igfb1OjpXfXRp'
-       }
+    stage('Start LambdaTest Tunnel') {
+       steps {
+           bat './lambdatest-tunnel --user prashantsharma --key RlEUtZdSXJkl3iEtXNx6eWFSyLBfDJlkYRYG1igfb1OjpXfXRp'
+        }
     }
     stage('run program') {
-    steps {
-        bat 'pip install -r requirements.txt'
-        bat python android.py
+        steps {
+            bat 'pip install -r requirements.txt'
+            bat python android.py
        }
     }
 
-stage('Stop LambdaTest Tunnel') {
-    steps {
-        sh './lambdatest-tunnel --user prashantsharma --key RlEUtZdSXJkl3iEtXNx6eWFSyLBfDJlkYRYG1igfb1OjpXfXRp --kill'
+    stage('Stop LambdaTest Tunnel') {
+        steps {
+            sh './lambdatest-tunnel --user prashantsharma --key RlEUtZdSXJkl3iEtXNx6eWFSyLBfDJlkYRYG1igfb1OjpXfXRp --kill'
        }
    }
 
     stage('Report'){
-      steps{
-        lambdaTestReportPublisher 'automation'
+       steps{
+          lambdaTestReportPublisher 'automation'
       }
     }
   }
