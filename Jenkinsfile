@@ -10,12 +10,6 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        bat 'pip install -r requirements.txt'
-        // bat 'python -m pip install pytest'
-      }
-    }
     stage('Download LambdaTest Tunnel') {
     steps {
         bat 'wget https://downloads.lambdatest.com/tunnel/v3/linux/64bit/LT_Linux.zip'
@@ -29,6 +23,7 @@ stage('Start LambdaTest Tunnel') {
     }
     stage('run program') {
     steps {
+        bat 'pip install -r requirements.txt'
         bat python android.py
        }
     }
