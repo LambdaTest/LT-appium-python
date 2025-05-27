@@ -1,5 +1,6 @@
 from appium import webdriver
-from appium.webdriver.common.mobileby import By
+from appium.options.ios import XCUITestOptions
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
@@ -30,28 +31,47 @@ def startingTest():
     else:
         accesskey = os.environ.get("LT_ACCESS_KEY")
 
-    driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
-                                username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
+    try:
+        options = XCUITestOptions()
+        for key, value in desired_caps.items():
+            options.set_capability(key, value)
+        driver = webdriver.Remote(
+            command_executor="https://" + username + ":" + accesskey + "@mobile-hub.lambdatest.com/wd/hub",
+            options=options
+        )
 
-    driver.get("https://mfml.in/api/getInfo")
+        driver.get("https://mfml.in/api/getInfo")
+        time.sleep(3)
+        print("Available contexts:", driver.contexts)
+        
+        # Wait for and click resolution
+        resolution = WebDriverWait(driver, 30).until(
+            EC.element_to_be_clickable((By.ID, "resolution")))
+        resolution.click()
+        print("Clicked 'resolution' using Selenium.")
 
-    colorElement = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
-        (By.ID, "resolution")))
-    colorElement.click()
+        # Wait for and click location
+        location = WebDriverWait(driver, 30).until(
+            EC.element_to_be_clickable((By.ID, "location")))
+        location.click()
+        print("Clicked 'location' using Selenium.")
 
-    textElement = WebDriverWait(driver, 30).until(
-        EC.element_to_be_clickable((By.ID, "location")))
-    textElement.click()
+        # Wait for and click details
+        details = WebDriverWait(driver, 30).until(
+            EC.element_to_be_clickable((By.ID, "details")))
+        details.click()
+        print("Clicked 'details' using Selenium.")
 
-    toastElement = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
-        (By.ID, "details")))
-    toastElement.click()
+        # Wait for and click timezone
+        timezone = WebDriverWait(driver, 30).until(
+            EC.element_to_be_clickable((By.ID, "timezone")))
+        timezone.click()
+        print("Clicked 'timezone' using Selenium.")
 
-    notification = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
-        (By.ID, "timezone")))
-    notification.click()
-    time.sleep(5)
-    driver.quit()
+        driver.quit()
+    except Exception as e:
+        print(f"Test failed: {e}")
+        driver.quit()
 
-
-startingTest()
+if __name__ == "__main__":
+    startingTest()

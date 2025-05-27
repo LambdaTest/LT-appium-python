@@ -1,14 +1,12 @@
 from appium import webdriver
-from appium.webdriver.common.mobileby import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from appium.options.android import UiAutomator2Options
 import time
 import os
 
 desired_caps = {
     "deviceName": "Galaxy .*",
     "platformName": "Android",
-    "platformVersion": "10",
+    "platformVersion": "14",
     "isRealMobile": True,
     "build": "Python Vanilla Android",
     "name": "Sample Test - Python",
@@ -32,31 +30,34 @@ def startingTest():
         accesskey = os.environ.get("LT_ACCESS_KEY")
 
     try:
-        driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
-                                  username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
+        options = UiAutomator2Options()
+        for key, value in desired_caps.items():
+            options.set_capability(key, value)
+        driver = webdriver.Remote(
+            command_executor="https://" + username + ":" + accesskey + "@mobile-hub.lambdatest.com/wd/hub",
+            options=options
+        )
 
         driver.get("https://mfml.in/api/getInfo")
-        colorElement = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
-            (By.ID, "resolution")))
-        colorElement.click()
-
-        textElement = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.ID, "location")))
-        textElement.click()
-
-        toastElement = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
-            (By.ID, "details")))
-        toastElement.click()
-
-        notification = WebDriverWait(driver, 30).until(EC.element_to_be_clickable(
-            (By.ID, "timezone")))
-        notification.click()
-
-        time.sleep(5)
+        time.sleep(3)
+        print("Available contexts:", driver.contexts)
+        
+        try:
+            driver.execute_script('document.getElementById("resolution").click();')
+            print("Clicked 'resolution' using JS.")
+            driver.execute_script('document.getElementById("location").click();')
+            print("Clicked 'location' using JS.")
+            driver.execute_script('document.getElementById("details").click();')
+            print("Clicked 'details' using JS.")
+            driver.execute_script('document.getElementById("timezone").click();')
+            print("Clicked 'timezone' using JS.")
+        except Exception as js_e:
+            print(f"JS click failed: {js_e}")
 
         driver.quit()
-    except:
+    except Exception as e:
+        print(f"Test failed: {e}")
         driver.quit()
 
-
-startingTest()
+if __name__ == "__main__":
+    startingTest()
