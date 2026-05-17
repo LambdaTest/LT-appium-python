@@ -20,6 +20,10 @@ With TestMu AI (Formerly LambdaTest), you can run Appium Tests with Python acros
 
 ### Prerequisites
 
+- A TestMu AI (Formerly LambdaTest) account with your username and access key
+
+### Prerequisites
+
 - Python 3.x and pip
 - A TestMu AI (Formerly LambdaTest) account with your username and access key
 
