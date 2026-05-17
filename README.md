@@ -2,18 +2,21 @@
 
 <p align="center">
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
-  <a href="https://pypi.org/project/Appium-Python-Client/"><img src="https://img.shields.io/pypi/v/Appium-Python-Client.svg?style=for-the-badge&labelColor=000000" alt="Appium-Python-Client version"></a>
   <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
 </p>
 
 ## Getting Started
 
-[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
+[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks.
 
-With TestMu AI (Formerly LambdaTest), you can run Appium tests in Python across real Android and iOS devices. This sample shows how to configure Python Appium tests to run on the TestMu AI Real Device Cloud.
+With TestMu AI (Formerly LambdaTest), you can run Appium Tests with Python across real browsers and operating systems.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
 - Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
+
+### Prerequisites
+
+- A TestMu AI (Formerly LambdaTest) account with your username and access key
 
 ### Prerequisites
 
@@ -74,7 +77,7 @@ Contributions are welcome. Open an issue to discuss your idea before submitting 
 ## TestMu AI (Formerly LambdaTest) Community
 
 Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
-  
+
 ## TestMu AI (Formerly LambdaTest) Certifications
 
 Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) for testers, developers, and QA engineers. Validate your skills in Selenium, Cypress, Playwright, Appium, Espresso and more. Industry-recognized, shareable on LinkedIn, and built by practitioners, not marketers.
@@ -87,7 +90,7 @@ Learn modern testing through tutorials, guides, videos, and weekly updates:
 * [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
 * [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
 * [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
-  
+
 ## LambdaTest is Now TestMu AI
 
 On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/), the world's first fully autonomous **Agentic AI Quality Engineering Platform**.
