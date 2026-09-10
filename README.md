@@ -12,7 +12,7 @@
 With TestMu AI (Formerly LambdaTest), you can run Appium Tests with Python across real browsers and operating systems.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
-- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/appium-python/) for the full setup walkthrough.
+- Follow the [Run Appium tests with Python on TestMu AI](https://www.testmuai.com/support/docs/appium-python/) for the full setup walkthrough.
 
 ### Prerequisites
 
