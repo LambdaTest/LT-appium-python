@@ -1,7 +1,8 @@
 from appium import webdriver
-from appium.webdriver.common.mobileby import MobileBy
+from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from appium.options.android import UiAutomator2Options
 import time
 import os
 
@@ -31,57 +32,66 @@ def startingTest():
     else:
         accesskey = os.environ.get("LT_ACCESS_KEY")
 
+    driver = None
     try:
-        driver = webdriver.Remote(desired_capabilities=desired_caps, command_executor="https://" +
-                                  username+":"+accesskey+"@mobile-hub.lambdatest.com/wd/hub")
+        options = UiAutomator2Options()
+        for key, value in desired_caps.items():
+            options.set_capability(key, value)
+            
+        driver = webdriver.Remote(
+            command_executor="https://" + username + ":" + accesskey + "@mobile-hub.lambdatest.com/wd/hub",
+            options=options
+        )
         colorElement = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/color")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/color")))
         colorElement.click()
 
         textElement = WebDriverWait(driver, 20).until(
-            EC.element_to_be_clickable((MobileBy.ID, "com.lambdatest.proverbial:id/Text")))
+            EC.element_to_be_clickable((AppiumBy.ID, "com.lambdatest.proverbial:id/Text")))
         textElement.click()
 
         toastElement = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/toast")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/toast")))
         toastElement.click()
 
         notification = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/notification")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/notification")))
         notification.click()
 
         geolocation = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/geoLocation")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/geoLocation")))
         geolocation.click()
         time.sleep(5)
 
         driver.back()
 
         home = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/buttonPage")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/buttonPage")))
         home.click()
 
         speedTest = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/speedTest")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/speedTest")))
         speedTest.click()
         time.sleep(5)
 
         driver.back()
 
         browser = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/webview")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/webview")))
         browser.click()
 
         url = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/url")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/url")))
         url.send_keys("https://www.lambdatest.com")
 
         find = WebDriverWait(driver, 20).until(EC.element_to_be_clickable(
-            (MobileBy.ID, "com.lambdatest.proverbial:id/find")))
+            (AppiumBy.ID, "com.lambdatest.proverbial:id/find")))
         find.click()
         driver.quit()
-    except:
-        driver.quit()
+    except Exception as e:
+        if driver:
+            driver.quit()
+        print(f"Test failed: {e}")
 
-
-startingTest()
+if __name__ == "__main__":
+    startingTest()
